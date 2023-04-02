@@ -22,13 +22,30 @@ class Graph:
     def print_matrix(self):
         print(Graph.adj)
 
-v, e = 5, 4
+v, e = 7, 10
 
 G = Graph(v, e)
 G.addEdge(0, 1)
-G.addEdge(0, 2)
-G.addEdge(0, 3)
-G.addEdge(0, 4)
-# G.print_matrix()
+G.addEdge(0, 5)
+G.addEdge(1, 0)
+G.addEdge(1, 2)
+G.addEdge(1, 6)
+G.addEdge(2, 1)
+G.addEdge(2, 3)
+G.addEdge(2, 6)
+G.addEdge(3, 2)
+G.addEdge(3, 4)
+G.addEdge(4, 3)
+G.addEdge(4, 5)
+G.addEdge(4, 6)
+G.addEdge(5, 0)
+G.addEdge(5, 4)
+G.addEdge(5, 6)
+G.addEdge(6, 1)
+G.addEdge(6, 2)
+G.addEdge(6, 4)
+G.addEdge(6, 5)
 
-G.DFS(1, [False] * v)
+G.print_matrix()
+
+G.DFS(0, [False] * v)
