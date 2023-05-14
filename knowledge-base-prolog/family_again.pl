@@ -32,6 +32,7 @@ parent(F, M, C) :- married(F, M), child(F, C), child(M, C).
 grandfather(GC, GF) :- child(GF, C), child(C, GC), male(GF).
 grandmother(GC, GM) :- child(GM, C), child(C, GC), female(GM).
 sibling(S1, S2) :- parent(F, M, S1), parent(F, M, S2), S1 \== S2.
+% sibling(S1, S2) :- child(P, S1), child(P, S2), S1 \== S2.
 in_law(X, IL) :- (married(X, Y); married(Y, X)), sibling(Y, IL).
 in_law(X, IL) :- sibling(X, Y), (married(Y, IL); married(IL, Y)).
 
